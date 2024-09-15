@@ -81,7 +81,7 @@ def get_product_info(element, url):
 def parse_page(url):
   response = requests.get(url, headers = custom_header)
   soup = BeautifulSoup(response.text, 'lxml')
-  elements = soup.find_all('div', {'class': "puis-card-container s-card-container s-overflow-hidden aok-relative puis-include-content-margin puis puis-v1ic4lgpvxpgtt2441n2jysslfc s-latency-cf-section puis-card-border"})
+  elements = soup.find_all('span', {'class': "a-declarative"})
   
   for element in elements:
     product_info = get_product_info(element, url)
